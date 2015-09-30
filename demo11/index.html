@@ -1,0 +1,112 @@
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+<head>
+</head>
+
+<body>
+	<canvas width="600" height="700" style="border:1px solid black;" id="canvas"></canvas>
+</body>
+	
+	<script>
+
+		var canvas = document.getElementById("canvas");
+      	var context = canvas.getContext("2d");
+
+      	var startPoint1 = {};
+      	var startPoint2 = {};
+
+      	var endPoint1 = {};
+      	var endPoint2 = {};
+
+      	var centerPoint = {};
+
+      	/*******************************************************************/
+      	// User has triggered a touch event
+      	/*******************************************************************/
+      	canvas.addEventListener('touchstart', function(event) {
+
+			// make sure our "touches" is 2 - representing two fingers
+			if (event.touches.length == 2)
+			{	
+				// track where our fingers are
+				var point1 = event.touches[0];
+				var point2 = event.touches[1];
+
+				startPoint1.x = point1.clientX;
+				startPoint1.y = point1.clientY;
+
+				startPoint2.x = point2.clientX;
+				startPoint2.y = point2.clientY;
+
+				// calculate our center point -- this is just the middle of our two points (the average)
+				// set this on the "start" method because we don't want to rewrite it every time we move around
+				centerPoint.x = (startPoint1.x + startPoint2.x) / 2;
+				centerPoint.y = (startPoint1.y + startPoint2.y) / 2;
+
+			}
+			
+		}, false);
+
+
+      	canvas.addEventListener('touchend', function(event) {
+      		return false;
+		}, false);
+
+		canvas.addEventListener('touchmove', function(event) {
+
+			// make sure our "touches" is 2 - representing two fingers
+			if (event.touches.length == 2)
+			{	
+				// track where our fingers are currently
+				var point1 = event.touches[0];
+				var point2 = event.touches[1];
+
+				// set a circle radius for the drawn circle points
+				var radius = 10;
+
+				// clear our canvas when the user is moving around with two fingers
+				context.clearRect(0, 0, canvas.width, canvas.height);
+
+				// draw our center point
+				context.beginPath();
+			    context.arc(centerPoint.x,centerPoint.y, radius, 0, 2 * Math.PI, false);
+		      	context.fillStyle = '#48BF11';
+		      	context.fill();
+		      	context.lineWidth = 2;
+		      	context.strokeStyle = '#9E9E9E';
+		      	context.stroke();				
+		      	context.closePath();
+
+		      	// draw the first point (finger 1)
+				context.beginPath();
+			    context.arc(point1.clientX, point1.clientY, radius, 0, 2 * Math.PI, false);
+		      	context.fillStyle = '#424A4D';
+		      	context.fill();
+		      	context.lineWidth = 2;
+		      	context.strokeStyle = '#9E9E9E';
+		      	context.stroke();				
+		      	context.closePath();
+
+		      	/// draw the second point (finger 2)
+		      	context.beginPath();
+			    context.arc(point2.clientX, point2.clientY, radius, 0, 2 * Math.PI, false);
+		      	context.fillStyle = '#424A4D';
+		      	context.fill();
+		      	context.lineWidth = 2;
+		      	context.strokeStyle = '#9E9E9E';
+		      	context.stroke();
+		      	context.closePath();
+
+			}
+
+		}, false);
+
+
+
+</script>
+
+</html>
+
+
