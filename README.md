@@ -46,3 +46,9 @@ All zoom in/zoom out events were initially being draw to 0,0 for the upper left 
 Since we're calculating the center frequently, create a method that can be used throughout instead of calculating it every event. Also set the initial image display to be centered.
 
 [View Demo 9](http://dayobject.me/canvas/demo9)
+
+### Demo 10
+Detect pinch gesture using insanely easily. Draw the points to the canvas. Must be on mobile device.
+
+[View Demo 10](http://dayobject.me/canvas/demo10)
+
