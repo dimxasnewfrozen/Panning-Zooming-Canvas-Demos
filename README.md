@@ -48,7 +48,12 @@ Since we're calculating the center frequently, create a method that can be used 
 [View Demo 9](http://dayobject.me/canvas/demo9)
 
 ### Demo 10
-Detect pinch gesture using insanely easily. Draw the points to the canvas. Must be on mobile device.
+Detect pinch gesture insanely easily. Draw the points to the canvas. Must be on mobile device.
 
 [View Demo 10](http://dayobject.me/canvas/demo10)
+
+### Demo 11
+Detect pinch gesture and calculate a ratio based on how much we've moved then scale an image up/down.
+
+[View Demo 11](http://dayobject.me/canvas/demo10)
 

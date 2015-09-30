@@ -1,0 +1,95 @@
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+<title>Pinch Zoom Gesture - Simple Euclidean Ratio</title>
+
+<head>
+</head>
+
+<body>
+	<canvas width="500" height="500" style="border:1px solid black;" id="canvas"></canvas>
+</body>
+	
+	<script>
+
+		var canvas = document.getElementById("canvas");
+      	var context = canvas.getContext("2d");
+
+  		var imageObj = new Image();
+	    imageObj.onload = function() {
+	      context.drawImage(imageObj, 0, 0);
+	    };
+	    imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
+
+      	var startPoint1 = {};
+      	var startPoint2 = {};
+
+      	var endPoint1 = {};
+      	var endPoint2 = {};
+
+      	var centerPoint = {};
+
+      	canvas.addEventListener('touchstart', function(event) {
+
+			// make sure our "touches" is 2 - representing two fingers
+			if (event.touches.length == 2)
+			{	
+				// track where our fingers are
+				var point1 = event.touches[0];
+				var point2 = event.touches[1];
+
+				startPoint1.x = point1.clientX;
+				startPoint1.y = point1.clientY;
+
+				startPoint2.x = point2.clientX;
+				startPoint2.y = point2.clientY;
+
+			}
+			
+		}, false);
+
+
+      	canvas.addEventListener('touchend', function(event) {
+      		return false;
+		}, false);
+
+		canvas.addEventListener('touchmove', function(event) {
+
+			// make sure our "touches" is 2 - representing two fingers
+			if (event.touches.length == 2)
+			{	
+				// track where our fingers are
+				var point1 = event.touches[0];
+				var point2 = event.touches[1];
+
+				endPoint1.x = point1.clientX;
+				endPoint1.y = point1.clientY;
+
+				endPoint2.x = point2.clientX;
+				endPoint2.y = point2.clientY;
+
+				// calculate the euclidean distance for each finger.
+				// we need to know the distance between the start point of finger 1 and the end point of finger 1
+				// we need to know the distance between the start point of finger 2 and the end point of finger 2
+				var distance1 = Math.sqrt(Math.pow(startPoint1.x - startPoint2.x, 2) + Math.pow(startPoint1.y - startPoint2.y, 2));
+      			var distance2 = Math.sqrt(Math.pow(endPoint1.x - endPoint2.x, 2) + Math.pow(endPoint1.y - endPoint2.y, 2));
+
+      			// take the two distances and get a ratio.
+      			var ratio = distance2 / distance1;
+
+      			// clear our canvas when the user is moving around with two fingers
+      			context.clearRect(0, 0, canvas.width, canvas.height);
+
+      			// redraw our image but take the original sizes and scale them by the ratio.
+				context.drawImage(imageObj, 0, 0, imageObj.width * ratio, imageObj.height * ratio);
+
+			}
+
+		}, false);
+
+</script>
+
+</html>
+
+
