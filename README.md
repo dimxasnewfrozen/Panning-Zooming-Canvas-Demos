@@ -55,5 +55,5 @@ Detect pinch gesture insanely easily. Draw the points to the canvas. Must be on 
 ### Demo 11
 Detect pinch gesture and calculate a ratio based on how much we've moved then scale an image up/down.
 
-[View Demo 11](http://dayobject.me/canvas/demo10)
+[View Demo 11](http://dayobject.me/canvas/demo11)
 
