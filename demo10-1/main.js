@@ -21,7 +21,19 @@ $(document).ready(function () {
 
 	var image_height, image_width;
 
-	var imageXPos, imageYPos;
+	var imageXPos = 0, imageYPos = 0;
+
+	var drawCircle = function () {
+
+		ctx.beginPath();
+		ctx.arc(canvas_center_x, canvas_center_y, 5, 0, 2 * Math.PI, false);
+		ctx.fillStyle = 'green';
+		ctx.fill();
+		ctx.lineWidth = 2;
+		ctx.strokeStyle = '#003300';
+		ctx.stroke();
+
+	}
 
 	// load our large image
 	var img;
@@ -48,13 +60,17 @@ $(document).ready(function () {
 
 		calculate_center();
 
-		canvasPos.deltaX = imageXPos;
-		canvasPos.deltaY = imageYPos;
+		//canvasPos.deltaX = imageXPos;
+		//canvasPos.deltaY = imageYPos;
 		
 		ctx.drawImage(img, imageXPos, imageYPos, initialImageWidth, newImageHeight);
+
+		drawCircle();
+
+
+
 	}
 	img.src = "../img/telescope.jpeg";
-
 
 	// our event object that handled clicking (mousedown), mousemove (dragging), mouseup (enddragging)
 	var events = {
@@ -94,6 +110,7 @@ $(document).ready(function () {
 
 				// these will be our new x,y position to move the image.
 				ctx.drawImage(img, canvasPos.deltaX, canvasPos.deltaY, initialImageWidth, newImageHeight);
+				drawCircle();
 
 				log.innerHTML += 'User is dragging to: ' + x + ", " + y + ' <br/>';
 				log.scrollTop = log.scrollHeight;
@@ -115,10 +132,13 @@ $(document).ready(function () {
 		initialImageWidth = initialImageWidth * 2;
 		newImageHeight = image_height / image_width * initialImageWidth;
 
-		calculate_center();
+		x = (canvasPos.deltaX + canvas_center_x) / 2
+		y = (canvasPos.deltaY + canvas_center_y) / 2;
+		//calculate_center();
 
 		ctx.clearRect(0,0, canvas_width, canvas_height);
-		ctx.drawImage(img, imageXPos, imageYPos, initialImageWidth, newImageHeight);
+		ctx.drawImage(img, x, y, initialImageWidth, newImageHeight);
+		drawCircle();
 
 		// since we dynamically moved the image to the center of the image, 
 		// we need to set our deltas so panning uses this new point
@@ -137,6 +157,7 @@ $(document).ready(function () {
 		
 		ctx.clearRect(0,0, canvas_width, canvas_height);
 		ctx.drawImage(img, imageXPos, imageYPos, initialImageWidth, newImageHeight);
+		drawCircle();
 
 		// since we dynamically moved the image to the center of the image, 
 		// we need to set our deltas so panning uses this new point
@@ -157,8 +178,8 @@ $(document).ready(function () {
 		var image_center_y = newImageHeight / 2;
 
 		// subtract the cavas size by the image center, that's how far we need to move it.
-		imageXPos = canvas_center_x - image_center_x;
-		imageYPos = canvas_center_y - image_center_y;
+		imageXPos = (canvas_center_x - image_center_x);
+		imageYPos = (canvas_center_y - image_center_y);
 
 	}
 
