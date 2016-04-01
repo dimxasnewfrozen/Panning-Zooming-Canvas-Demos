@@ -57,3 +57,9 @@ Detect pinch gesture and calculate a ratio based on how much we've moved then sc
 
 [View Demo 11](http://dayobject.me/canvas/demo11)
 
+
+### Demo 12
+Zoom in and out on mouse wheel point (with default panning functionality)
+
+[View Demo 12](http://dayobject.me/canvas/demo12)
+
