@@ -172,6 +172,7 @@ $(document).ready(function () {
 	canvas.addEventListener('mousemove', events.mouseMove, false);
 	canvas.addEventListener('mouseup', events.mouseUp, false);
 	canvas.addEventListener('mousewheel', events.mouseWheel, false);
+	canvas.addEventListener('DOMMouseScroll', events.mouseWheel, false);
 
 
 	var calculate_center = function() {
