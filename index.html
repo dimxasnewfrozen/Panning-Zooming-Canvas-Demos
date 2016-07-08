@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Panning-zooming-canvas-demos by dimxasnewfrozen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Panning-zooming-canvas-demos</h1>
+      <h2 class="project-tagline">A series of demos that shows how to display an image on an html5 canvas, pan around, zoom in and out</h2>
+      <a href="https://github.com/dimxasnewfrozen/Panning-Zooming-Canvas-Demos" class="btn">View on GitHub</a>
+      <a href="https://github.com/dimxasnewfrozen/Panning-Zooming-Canvas-Demos/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/dimxasnewfrozen/Panning-Zooming-Canvas-Demos/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="panning-zooming-canvas-demos" class="anchor" href="#panning-zooming-canvas-demos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Panning-Zooming-Canvas-Demos</h1>
+
+<p>A series of demos that shows how to display an image on a html5 canvas, pan around, zoom in and out</p>
+
+<h3>
+<a id="demo-1" class="anchor" href="#demo-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo 1</h3>
+
+<p>Introduction to HTML5 canvas. How to initialize a canvas object and draw a colored rectangle.</p>
+
+<p><a href="http://dayobject.me/canvas/demo1">View Demo 1</a></p>
+
+<h3>
+<a id="demo-2" class="anchor" href="#demo-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo 2</h3>
+
+<p>How to intialize an image object and draw it inside of the canvas</p>
+
+<p><a href="http://dayobject.me/canvas/demo2">View Demo 3</a></p>
+
+<h3>
+<a id="demo-3" class="anchor" href="#demo-3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo 3</h3>
+
+<p>How to calculate the scaling of an image given a predefined width and draw it to the canvas</p>
+
+<p><a href="http://dayobject.me/canvas/demo3">View Demo 3</a></p>
+
+<h3>
+<a id="demo-4" class="anchor" href="#demo-4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo 4</h3>
+
+<p>Initialize a bunch of canvas events: clicking (mousedown), dragging (mousemove), letting go (mouseup) and write a simple log of the events.</p>
+
+<p><a href="http://dayobject.me/canvas/demo4">View Demo 4</a></p>
+
+<h3>
+<a id="demo-5" class="anchor" href="#demo-5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo 5</h3>
+
+<p>Grab the coordinates of mousedown, initialize the drag event and update the distanced moved from dragging. Update the canvas image based on distanced moved/dragged.</p>
+
+<p><a href="http://dayobject.me/canvas/demo5">View Demo 5</a></p>
+
+<h3>
+<a id="demo-6" class="anchor" href="#demo-6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo 6</h3>
+
+<p>Keep track of how far the image moved based on previous drag events instead of resetting the image position to 0,0 every time.</p>
+
+<p><a href="http://dayobject.me/canvas/demo6">View Demo 6</a></p>
+
+<h3>
+<a id="demo-7" class="anchor" href="#demo-7" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo 7</h3>
+
+<p>Incorporate jQuery to quickly handle/access button events for new Zoom in and Zoom out options. Use a basic 2x zoom scale and multiply the size by 2 when zooming in. Divide by 2 when zooming out. Redraw the canvas with new sizes for each zoomin/zoomout event.</p>
+
+<p><a href="http://dayobject.me/canvas/demo7">View Demo 7</a></p>
+
+<h3>
+<a id="demo-8" class="anchor" href="#demo-8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo 8</h3>
+
+<p>All zoom in/zoom out events were initially being draw to 0,0 for the upper left coordinate. Zoom in/out to the center of image instead of the top left. </p>
+
+<p><a href="http://dayobject.me/canvas/demo8">View Demo 8</a></p>
+
+<h3>
+<a id="demo-9" class="anchor" href="#demo-9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo 9</h3>
+
+<p>Since we're calculating the center frequently, create a method that can be used throughout instead of calculating it every event. Also set the initial image display to be centered.</p>
+
+<p><a href="http://dayobject.me/canvas/demo9">View Demo 9</a></p>
+
+<h3>
+<a id="demo-10" class="anchor" href="#demo-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo 10</h3>
+
+<p>Detect pinch gesture insanely easily. Draw the points to the canvas. Must be on mobile device.</p>
+
+<p><a href="http://dayobject.me/canvas/demo10">View Demo 10</a></p>
+
+<h3>
+<a id="demo-11" class="anchor" href="#demo-11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo 11</h3>
+
+<p>Detect pinch gesture and calculate a ratio based on how much we've moved then scale an image up/down.</p>
+
+<p><a href="http://dayobject.me/canvas/demo11">View Demo 11</a></p>
+
+<h3>
+<a id="demo-12" class="anchor" href="#demo-12" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo 12</h3>
+
+<p>Zoom in and out on mouse wheel point (with default panning functionality)</p>
+
+<p><a href="http://dayobject.me/canvas/demo12">View Demo 12</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/dimxasnewfrozen/Panning-Zooming-Canvas-Demos">Panning-zooming-canvas-demos</a> is maintained by <a href="https://github.com/dimxasnewfrozen">dimxasnewfrozen</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
